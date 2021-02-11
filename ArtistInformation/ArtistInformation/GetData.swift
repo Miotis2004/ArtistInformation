@@ -12,16 +12,14 @@ import SwiftyJSON
 class GetData: ObservableObject {
     @Published var datas = [DataType]()
     
-    //@Binding var name: String
-    var name: String
+    @Binding var name: String
     
-    init(name: String) {
-        self.name = name
-        getData(fromAPI: name)
+    init() {
+        getData()
     }
     
-    func getData (fromAPI address: String) {
-        let url = URL(string: address)!
+    func getData () {
+        let url = URL(string: "https://itunes.apple.com/search?term={\(name)}")!
         
         let session = URLSession(configuration: .default)
         
