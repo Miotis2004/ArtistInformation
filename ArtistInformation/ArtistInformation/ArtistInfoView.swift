@@ -14,16 +14,16 @@ struct ArtistInfoView: View {
     @Binding var name: String
     
     var body: some View {
-
+        
         List(list.datas) { i in
             TrackInfoView(artistName: i.artistName, trackName: i.trackName, releaseDate: i.releaseDate, primaryGenreName: i.primaryGenreName, trackPrice: i.trackPrice)
         }
     }
 }
 
-struct ArtistInfoView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        ArtistInfoView()
-    }
-}
+//struct ArtistInfoView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        ArtistInfoView( name: "Bob")
+//    }
+//}
