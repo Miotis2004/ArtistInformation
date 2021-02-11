@@ -15,7 +15,9 @@ struct ArtistInfoView: View {
     
     var body: some View {
         let list = GetData(name: "https://itunes.apple.com/search?term={\(name)}")
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(list.datas) { i in
+            TrackInfoView(artistName: i.artistName, trackName: i.trackName, releaseDate: i.releaseDate, primaryGenreName: i.primaryGenreName, trackPrice: i.trackPrice)
+        }
     }
 }
 
